@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol{
+  list-style: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+body{
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1;
+  background-color: #e6325f;
+}
+
+img{
+  max-width: 100%;
+}
+
+.header-inner {
+  max-width: 1200px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-meun-button{
+  display: none;
+}
+
+.header-logo{
+  display: block;
+  width: 170px;
+}
+
+.site-menu ul {
+  display: flex;
+}
+
+.site-menu ul li {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.site-menu ul li a{
+  font-family: 'Montagu Slab', serif;
+  font-weight: normal;
+}
+
+.footer{
+  color:#ffffff;
+  background-color: #e6325f;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer-logo{
+  display: block;
+  width: 50px;
+  margin-top:  90px;
+}
+
+.footer-注意事項{
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 1px;
+}
+
+@media (max-width: 800px){
+  .site-menu ul{
+    display: block;
+    text-align: center;
+  }
+
+  .site-meun li{
+    margin-top: 20px;
+  }
+
+  .footer{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: #e6325f;
+    height: 11px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+
+  .header-inner{
+    padding-left: 11px;
+    padding-right: 11px;
+    height:100%;
+    position: relative;
+  }
+
+  .header-logo{
+    width: 100px;
+  }
+
+  .header-site-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: #ffffff;
+    background-color: #736E62;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .toggle-meun-button{
+    display: block;
+    width: 44px;
+    height: 43px;
+    background-image: url(../images/common/icon-menu.png);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+  }
+  
+  
+}

@@ -1,0 +1,280 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol{
+  list-style: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+body{
+  font-family: 'Montagu Slab', serif;
+  font-size: clamp(1rem, 1.5vw, 1.3rem); 
+  line-height: 1;
+  background-color: #e6325f;
+}
+
+img{
+  max-width: 100%;
+}
+
+.header-inner {
+  max-width: 1200px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0ff;
+}
+
+.toggle-menu-button {
+  display: none;
+}
+
+.header-logo{
+  display: flex;
+  width: 500px;
+  min-width: 150px; /* 最小幅 */
+}
+
+.site-menu ul {
+  display: flex;
+}
+
+.site-menu ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.site-menu ul li a{
+  font-family: "ab-intore", sans-serif;
+  font-weight: bold;
+}
+
+.main{
+  color: #00ffff;
+  }
+
+  .footer{
+    color: #fff;
+    background-color: #e6325f;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  
+  .footer-注意事項{
+    font-family: 'Montagu Slab', serif;
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .footer-text2{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
+    
+    .contact{
+      border: 2.5px solid #fff;
+      padding: 5px 10px;
+      margin-right: 100px;
+    }
+    
+    .copyright{
+      text-align: center;
+      font-size: 12px;
+      margin-left: 100px;
+    }
+    @media (max-width: 1024px){
+  .site-menu ul{
+    display: block;
+    text-align: center;
+  }
+
+  .site-menu li{
+    margin-top:20px;
+  }
+
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/index/1125二段ロゴ透過.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #e6325f;
+    height: 65px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 255, 255, 1);
+  }
+
+  .header-logo img{
+    opacity: 0
+  }
+
+  .header-inner{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    position: relative;
+  }
+  .header-logo{
+    width: auto;
+  }
+
+  .header-site-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: aqua;
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 5px;
+    padding-bottom: 20px;
+    display: none;
+  }
+
+  .header-site-menu.is-show{
+    display: block;
+  }
+
+  .toggle-menu-button {
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/common/icon-menu.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+  }
+
+  .main{
+    padding-top: 65px;
+  }
+}
+@media (max-width: 800px){
+  .site-menu ul{
+    display: block;
+    text-align: center;
+  }
+
+  .site-menu li{
+    margin-top:20px;
+  }
+
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/index/1125二段ロゴ透過.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #e6325f;
+    height: 65px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 255, 255, 1);
+  }
+
+  .header-logo img{
+    opacity: 0
+  }
+
+  .header-inner{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    position: relative;
+  }
+  .header-logo{
+    width: auto;
+  }
+
+  .header-site-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: aqua;
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 5px;
+    padding-bottom: 20px;
+    display: none;
+  }
+
+  .header-site-menu.is-show{
+    display: block;
+  }
+
+  .toggle-menu-button {
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/common/icon-menu.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+  }
+
+  .main{
+    padding-top: 65px;
+  }
+
+  .footer-注意事項{
+    font-family: 'Montagu Slab', serif;
+    font-weight: 600;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+  }
+
+  .footer-text2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .contact {
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    margin-right: 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 10px;
+    margin-left: 20px;
+  }
+}

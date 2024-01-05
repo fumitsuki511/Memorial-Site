@@ -1,0 +1,516 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol{
+  list-style: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+body{
+  font-family: "ab-intore", sans-serif;
+  line-height: 1;
+  background-color: #e6325f;
+}
+
+img{
+  max-width: 100%;
+}
+
+.header-inner {
+  max-width: 1200px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo{
+  display: block;
+  width: 900px; 
+}
+
+.main{
+  color: #00ffff;
+  }
+
+.footer{
+  color: #fff;
+  background-color: #e6325f;
+  font-family: 'Montagu Slab', serif;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.footer-注意事項{
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.footer-text2{
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.contact{
+  border: 2.5px solid #fff;
+  padding: 5px 10px;
+  margin-right: 100px;
+}
+
+.copyright{
+  text-align: center;
+  font-size: 12px;
+  margin-left: 100px;
+}
+
+.first-view{
+  height:calc(100vh - 80px);
+  background-image: url(../images/common/背景.png);
+  background-repeat: no-repeat;
+  background-position: center 10%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 100%;
+}
+
+.title2 {
+  font-family: "ab-intore", sans-serif;
+  font-size: 35px;
+  margin-top: 40px;
+  text-align: center;
+  animation: flicker 1.5s infinite alternate;
+  color: #00ffff;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #00ffff,
+      0 0 60px #00ffff,
+      0 0 70px #00ffff,
+      0 0 80px #00ffff;
+  }
+  20%, 24%, 55% {
+      text-shadow: none;
+  }
+}
+
+.access-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  position: relative;
+  justify-content: center;
+  flex-basis: 700px;
+  height: 100%;
+  max-width: 100%;
+}
+
+.chapter{
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.flex-item1 {
+  margin-top: 40px;
+  text-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #00ffff,
+    0 0 0.8rem #00ffff,
+    0 0 2.8rem #00ffff,
+    0 0 1.3rem #00ffff;
+
+}
+
+.flex-item {
+  margin-top: 40px;
+  text-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #00ffff,
+    0 0 0.8rem #00ffff,
+    0 0 2.8rem #00ffff,
+    0 0 1.3rem #00ffff;
+}
+
+/*== ボタン共通設定 */
+.btn {
+  /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+    overflow: hidden;
+    /*ボタンの形状*/
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    text-align: right;
+    padding-right: 50px;
+    border: 2.5px solid #e6325f;/* ボーダーの色と太さ */
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #e6325f,
+    0 0 0.8rem #e6325f,
+    0 0 2.8rem #e6325f,
+    inset 0 0 1.3rem #e6325f;
+    font-size: 45px;
+    height: 170px;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: ease .2s;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+position: relative;
+z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+color:#00ffff;
+}
+
+.btn:hover span{
+color:#00ffff;
+}
+
+/*== 背景が流れる（左から右） */
+.bgleft:before {
+ content: '';
+  /*絶対配置で位置を指定*/
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: 2;
+  /*色や形状*/
+ background:#E6325F;/*背景色*/
+ width: 100%;
+height: 100%;
+  /*アニメーション*/
+ transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+ transform: scale(0, 1);
+transform-origin: right top;
+}
+
+/*hoverした際の形状*/
+.bgleft:hover:before{
+transform-origin:left top;
+transform:scale(1, 1);
+}
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+position: fixed;
+width: 100%;
+height: 100%;
+z-index: 999;
+text-align:center;
+color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_text {
+position: absolute;
+top: 50%;
+left: 50%;
+  z-index: 999;
+transform: translate(-50%, -50%);
+color: #fff;
+width: 100%;
+}
+
+/*IE11対策用バーの線の高さ※対応しなければ削除してください*/
+#splash_text svg{
+  height: 2px;
+}
+
+/*割れる画面のアニメーション*/
+.loader_cover {
+  width: 100%;
+  height: 50%;
+  background-color: #0d0e41;
+  transition: all .3s cubic-bezier(.04, .435, .315, .9);
+  transform: scaleY(1);
+}
+/*上の画面*/
+.loader_cover-up {
+  transform-origin: center top;
+}
+
+/*下の画面*/
+.loader_cover-down {
+  position: absolute;
+  bottom: 0;
+  transform-origin: center bottom;
+}
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+  transform: scaleY(0);
+}
+
+.access{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+@media (max-width:800px){
+  .site-menu ul{
+    display: block;
+    text-align: center;
+  }
+
+  .site-menu li{
+    margin-top:20px;
+  }
+
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/index/1125二段ロゴ透過.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #e6325f;
+    height: 70px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 255, 255, 1);
+  }
+
+  .header-logo img{
+    opacity: 0
+  }
+
+  .header-inner{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    position: relative;
+  }
+  .header-logo{
+    width: auto;
+  }
+
+  .main{
+    padding-top: 70px;
+  }
+
+  .footer-注意事項{
+    font-family: 'Montagu Slab', serif;
+    font-weight: 600;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+  }
+
+    .footer-text2 {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    .contact {
+      border: 2px solid #fff;
+      padding: 5px 10px;
+      margin-right: 20px;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+  
+    .copyright {
+      text-align: center;
+      font-size: 10px;
+      margin-left: 20px;
+    }
+
+  .first-view {
+    height: calc(100vh - 50px);
+    text-align: center;
+    align-items: flex-start;
+    height: 100%;
+    max-width: 100%;
+  }
+  .first-view-text{
+    padding-top: 10px;
+    padding-left: 25px;
+  }
+
+  .first-view-text h1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .first-view-text p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .link-button-area{
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .link-button {
+    background-color: #000033;
+    color: #00ffff;
+    display: inline-block;
+    min-width: 100px;
+    line-height: 30px;
+    border-radius: 24px;
+  }
+
+  .access-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    position: relative;
+    justify-content: center;
+    flex-basis: 300px;
+    height: 100%;
+    max-width: 100%;
+  }
+  
+.title2 {
+  font-family: "ab-intore", sans-serif;
+  font-size: 15px;
+  margin-top: 30px;
+  animation: flicker1 1.5s infinite alternate;
+  color: #00ffff;
+}
+
+@keyframes flicker1 {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #00ffff,
+      0 0 60px #00ffff,
+      0 0 70px #00ffff,
+      0 0 80px #00ffff,
+      0 0 100px #00ffff;
+  }
+  20%, 24%, 55% {
+      text-shadow: none;
+  }
+}
+
+  .chapter{
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .flex-item1 {
+    margin-top: 30px; 
+  }
+
+  .flex-item {
+    margin-top: 60px; 
+  }
+
+  .access{
+    margin-top: 25px;
+    font-size: 13px;
+  }
+
+  /*== ボタン共通設定 */
+.btn {
+  /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+    overflow: hidden;
+    /*ボタンの形状*/
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: right;
+    padding-right: 15px;
+    border: 2.5px solid #e6325f;/* ボーダーの色と太さ */
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #e6325f,
+    0 0 0.8rem #e6325f,
+    0 0 1.2rem #e6325f,
+    inset 0 0 1.3rem #e6325f;
+    font-size: 25px;
+    height: 100px;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: ease .2s;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+position: relative;
+z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+color:#00ffff;
+}
+
+.btn:hover span{
+color:#00ffff;
+}
+
+/*== 背景が流れる（左から右） */
+.bgleft:before {
+ content: '';
+  /*絶対配置で位置を指定*/
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: 2;
+  /*色や形状*/
+ background:#E6325F;/*背景色*/
+ width: 100%;
+height: 100%;
+  /*アニメーション*/
+ transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+ transform: scale(0, 1);
+transform-origin: right top;
+}
+
+/*hoverした際の形状*/
+.bgleft:hover:before{
+transform-origin:left top;
+transform:scale(1, 1);
+}
+}

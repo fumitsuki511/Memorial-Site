@@ -1,0 +1,356 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "PixelMplus12";
+  src: url(../Fonts.woff)  format('woff');
+}
+
+.main{
+  background-image: url(/images/common/背景.png);
+  padding-bottom: 20px;
+}
+
+.title{
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #00ffffff;
+  animation: flicker 1.5s infinite alternate;
+  color: #00ffff;
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #00ffff,
+      0 0 60px #00ffff,
+      0 0 70px #00ffff,
+      0 0 80px #00ffff,
+      0 0 100px #00ffff;
+  }
+  20%, 24%, 55% {
+      text-shadow: none;
+  }
+}
+.box{
+  font-family: "PixelMplus12";
+  padding:0 20px;
+  margin:100px 100px 25px 100px;
+  padding-bottom: 50px;
+  border: 2px solid #e6325f;
+  border-radius:25px;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #e6325f,
+  0 0 0.8rem #e6325f,
+  0 0 2.8rem #e6325f,
+  inset 0 0 1.3rem #e6325f;
+}
+.title h1{
+  font-family: "ab-intore", sans-serif;
+  font-size: 50px;
+  margin-top: 70px;
+}
+
+.title p{
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.Illustration-top,.message-top,.organizer-top,.websiteseisaku-top{
+	display: flex;
+	align-items: center;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.Illustration-top:before,
+.Illustration-top:after {
+  content: "";
+  flex-grow: 1;
+  height: 2px; /* 線の太さ */
+  background: #00ffff; /* 線の色 */
+  margin:0 50px; /* 文字と線の余白 */
+
+}
+
+.message-top:before,
+.message-top:after {
+  content: "";
+  flex-grow: 1;
+  height: 2px; /* 線の太さ */
+  background: #00ffff; /* 線の色 */
+  margin:0 50px; /* 文字と線の余白 */
+
+}
+
+.organizer-top:before,
+.organizer-top:after {
+  content: "";
+  flex-grow: 1;
+  height: 2px; /* 線の太さ */
+  background: #00ffff; /* 線の色 */
+  margin:0 50px; /* 文字と線の余白 */
+
+}
+
+.websiteseisaku-top:before,
+.websiteseisaku-top:after {
+  content: "";
+  flex-grow: 1;
+  height: 2px; /* 線の太さ */
+  background: #00ffff; /* 線の色 */
+  margin:0 50px; /* 文字と線の余白 */
+
+}
+
+.Illustration-list ,.message-list,.organizer-list,.websiteseisaku-list{
+  list-style: none;
+  width: 1200px;
+  max-width: 100%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,270px);
+  column-gap: 20px;
+  row-gap: 30px;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 27px;
+}
+.hover:hover{
+color: #e6325f;
+}
+
+/*リンクの形状*/
+#page-top a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 1px;
+  border: 5px double #fff;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12.5px;
+  transition: all 0.3s;
+}
+
+/*リンクを右下に固定*/
+#page-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  /*はじめは非表示*/
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+/*　左の動き　*/
+
+#page-top.LeftMove {
+  animation: LeftAnime 0.5s forwards;
+}
+
+@keyframes LeftAnime {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*　右の動き　*/
+
+#page-top.RightMove {
+  animation: RightAnime 0.5s forwards;
+}
+
+@keyframes RightAnime {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(100px);
+  }
+}
+
+@media (max-width:800px){
+  .title h1 {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+
+  .title p{
+    font-size: 15px;
+  }
+
+  .box{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    margin:40px 15px 10px 15px;
+    border: 2px solid #e6325f;
+    border-radius:25px;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #e6325f,
+    0 0 0.8rem #e6325f,
+    0 0 2.8rem #e6325f,
+    inset 0 0 1.3rem #e6325f;
+  }
+
+  .Illustration-top,.message-top,.organizer-top,.websiteseisaku-top{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .Illustration-top:before,
+  .Illustration-top:after {
+    content: "";
+    flex-grow: 1;
+    height: 2px; /* 線の太さ */
+    background: #00ffff; /* 線の色 */
+    margin:0 15px; /* 文字と線の余白 */
+  }
+  
+  .message-top:before,
+  .message-top:after {
+    content: "";
+    flex-grow: 1;
+    height: 2px; /* 線の太さ */
+    background: #00ffff; /* 線の色 */
+    margin:0 15px; /* 文字と線の余白 */
+  }
+  
+  .websiteseisaku-top:before,
+  .websiteseisaku-top:after {
+    content: "";
+    flex-grow: 1;
+    height: 2px; /* 線の太さ */
+    background: #00ffff; /* 線の色 */
+    margin:0 15px; /* 文字と線の余白 */
+  }
+
+  .organizer-top:before,
+  .organizer-top:after {
+    content: "";
+    flex-grow: 1;
+    height: 2px; /* 線の太さ */
+    background: #00ffff; /* 線の色 */
+    margin:0 15px; /* 文字と線の余白 */
+  }
+  
+  .Illustration-list ,.message-list{
+    width: 800px;
+      max-width: 100%;
+      margin-top: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 18px;
+      grid-template-columns: repeat(auto-fit, 120px);
+      column-gap: 20px;
+      row-gap: 30px;
+    }
+    .organizer-list,.websiteseisaku-list{
+      width: 800px;
+        max-width: 100%;
+        margin-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 18px;
+        grid-template-columns: repeat(auto-fit, 180px);
+      }
+  
+  .hover:hover{
+  color: #e6325f;
+  }
+
+  /*リンクの形状*/
+  #page-top a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    border-radius: 1px;
+    border: 5px double #fff;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12.5px;
+    transition: all 0.3s;
+  }
+
+  /*リンクを右下に固定*/
+  #page-top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+    /*はじめは非表示*/
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  /*　左の動き　*/
+
+  #page-top.LeftMove {
+    animation: LeftAnime 0.5s forwards;
+  }
+
+  @keyframes LeftAnime {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /*　右の動き　*/
+
+  #page-top.RightMove {
+    animation: RightAnime 0.5s forwards;
+  }
+
+  @keyframes RightAnime {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(100px);
+    }
+  }
+}
