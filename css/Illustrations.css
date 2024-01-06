@@ -68,6 +68,9 @@ body{
 .lum-lightbox.lum-open{
   z-index: 11;
 }
+.lum-lightbox{
+  font-family: "PixelMplus12";
+}
 
 .illustration-list {
   width: 1600px;
@@ -80,6 +83,7 @@ body{
   column-gap: 30px;
   row-gap: 40px;
   justify-content: center;
+
 }
 
 .illustration-list figure{
@@ -210,7 +214,8 @@ body{
   width: 100%;
   object-fit: contain;
 }
-  
+
+
   .illustration-list dl{
     margin-top: 20px;
     text-align: center;
@@ -283,3 +288,19 @@ body{
     }
   }
   }
+  @media (max-width:400px){
+  .illustration-list {
+    width: 400px;
+    max-width: 100%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  } 
+  .illustration-list dl{
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: clamp(10px, 6vw, 20px);
+  }
+}
