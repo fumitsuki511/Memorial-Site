@@ -172,7 +172,11 @@ img {
     border: none;
     border-radius: 0;
     outline: none;
+    transition: all 0.3s;
   }
+  /* .toggle-menu-button.is-active {
+    background-image: url(../images/common/icon-menu_active.png);
+  } */
 
   .main {
     padding-top: 90px;

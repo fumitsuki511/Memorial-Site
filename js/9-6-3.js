@@ -8,3 +8,7 @@ $(".message").modaal({
 		$('html').css('overflow-y','scroll');/*縦スクロールバーを出す*/
 	}
 });
+
+$(".message").on("click", function() {
+	$('#modaal-close').appendTo('.modaal-container');
+});

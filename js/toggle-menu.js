@@ -4,9 +4,12 @@ window.addEventListener('load', function () {
     $button.addEventListener('click', function () {
         if ($menu.classList.contains('is-show')) {
             $menu.classList.remove('is-show');
+            $button.classList.remove('is-active');
+
         }
         else {
             $menu.classList.add('is-show');
+            $button.classList.add('is-active');
         }
     });
 });

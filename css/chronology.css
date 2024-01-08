@@ -6,7 +6,7 @@
 }
 
 .main {
-  background-image: url(/images/common/背景.png);
+  background-image: url(../images/common/背景.png);
   padding-bottom: 5px;
 }
 
@@ -57,6 +57,7 @@
 .title p {
   font-size: 24px;
   margin-top: 10px;
+  font-family: "PixelMplus12";
 }
 
 .title2 {

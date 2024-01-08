@@ -77,6 +77,7 @@
 .title p {
   font-size: 24px;
   margin-top: 10px;
+  font-family: "PixelMplus12";
 }
 
 .message-list {
@@ -90,6 +91,10 @@
   column-gap: 50px;
   row-gap: 25px;
   justify-content: center;
+}
+
+.message-list li a {
+  display: inline-block;
 }
 
 .trans {
@@ -108,20 +113,10 @@
 
 .message-list dt {
   font-size: 25px;
-}
-
-.message-text {
-  font-family: 'Montagu Slab', serif;
-  font-size: 25px;
   line-height: 1.6;
 }
 
-.message-name {
-  font-family: 'Montagu Slab', serif;
-  margin-top: 40px;
-  font-size: 20px;
-  text-align: center;
-}
+
 
 /*↓ページネーションの設定↓*/
 .example3 {
@@ -275,17 +270,6 @@
     font-size: 16px;
   }
 
-  .message-text {
-    font-size: 15px;
-    line-height: 1.3;
-  }
-
-  .message-name {
-    margin-top: 40px;
-    font-size: 16px;
-    text-align: center;
-  }
-
   /*リンクの形状*/
   #page-top a {
     display: flex;
@@ -376,3 +360,127 @@
 
   /*↑ページネーションの設定↑*/
 }
+
+
+
+/*↓メッセージウインドウの設定↓*/
+
+.modaal-container {
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.modaal-content {
+  padding-top: 45px;
+  background-color: #1ce4b5;
+  border: 5px solid #1ce4b5;
+}
+@media (max-width:800px) {
+  .modaal-content {
+    padding-top: 30px;
+    border: 3px solid #1ce4b5;
+  }
+}
+.modaal-content:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: -100px;
+  left: -20px;
+  transform: rotate(-5deg);
+  width: 100%;
+  height: 100px;
+  background-color: #9df7de;
+}
+@media (max-width:800px) {
+  .modaal-content:before {
+    top: -90px;
+  }
+}
+
+
+.modaal-content-container {
+  background-color: #1c0c37;
+  border-radius: 0 0 8px 8px
+}
+@media (max-width:800px) {
+  .modaal-content-container {
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+}
+
+.message-text {
+  color: #1ce4b5;
+  font-size: 20px;
+  font-family: "PixelMplus12";
+  line-height: 1.8;
+}
+@media (max-width:800px) {
+  .message-text {
+    font-size: 16px;
+  }
+}
+
+.message-name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #c93360;
+  font-size: 30px;
+  font-family: "PixelMplus12";
+  font-weight: bold;
+}
+@media (max-width:800px) {
+  .message-name {
+    top: 7px;
+    font-size: 20px;
+  }
+}
+
+.modaal-wrapper .modaal-close {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #c93360;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+@media (max-width:800px) {
+  .modaal-wrapper .modaal-close {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.modaal-wrapper .modaal-close:hover {
+  background-color: #c93360;
+}
+.modaal-wrapper .modaal-close:hover:before, .modaal-wrapper .modaal-close:hover:after {
+  background-color: #fff;
+}
+
+.modaal-wrapper .modaal-close:before,.modaal-wrapper .modaal-close:after {
+  top: 50%;
+  left: 50%;
+  background-color: #c93360;
+}
+.modaal-wrapper .modaal-close:before {
+  transform: translate3d(-50%,-50%,0) rotate(45deg);
+}
+.modaal-wrapper .modaal-close:after {
+  transform: translate3d(-50%,-50%,0) rotate(-45deg);
+}
+
+@media (max-width:800px) {
+  .modaal-wrapper .modaal-close:before,.modaal-wrapper .modaal-close:after {
+    width: 3px;
+    height: 15px;
+  }
+}
+
+/*↑メッセージウインドウの設定↑*/
