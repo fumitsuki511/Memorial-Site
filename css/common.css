@@ -174,9 +174,9 @@ img {
     outline: none;
     transition: all 0.3s;
   }
-  /* .toggle-menu-button.is-active {
+  .toggle-menu-button.is-active {
     background-image: url(../images/common/icon-menu_active.png);
-  } */
+  }
 
   .main {
     padding-top: 90px;
@@ -199,7 +199,7 @@ img {
     left: 0;
     right: 0;
     background-image: url(../images/index/1125二段ロゴ透過.png);
-    background-size: contain;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #e6325f;
@@ -213,14 +213,14 @@ img {
   }
 
   .header-inner {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 100%;
     position: relative;
   }
 
   .header-logo {
-    width: auto;
+    width: calc(100% - 40px);
   }
 
   .header-site-menu {
@@ -241,8 +241,8 @@ img {
 
   .toggle-menu-button {
     display: block;
-    width: 90px;
-    height: 90px;
+    width: 40px;
+    height: 40px;
     background-image: url(../images/common/icon-menu.png);
     background-size: 60%;
     background-position: center;
