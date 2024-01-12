@@ -640,8 +640,13 @@
 }
 
 .chonologyBox:last-child {
+  flex-direction: column;
+  gap: 20px;
   transform: translate3d(0,30px,0);
   transition-delay: .5s;
+}
+.chonologyBox:last-child>* {
+  width: 100%;
 }
 
 .chonologyBox.is-active {
@@ -873,6 +878,10 @@
 
   .chonologyBox:nth-child(odd),.chonologyBox:nth-child(even) {
     transform: translate3d(0,30px,0);
+  }
+
+  .chonologyBox:last-child {
+    gap: 15px;
   }
 
   .chonologyBox>* {
