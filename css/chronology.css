@@ -890,9 +890,22 @@
     font-size: 14px;
   }
 
+  .splide .splide__arrow {
+    width: 25px;
+    height: 25px;
+  }
+
   .splide .splide__arrow:after {
-    width: 12px;
-    height: 12px;
+    width: 7px;
+    height: 7px;
+  }
+
+  .splide .splide__arrow.splide__arrow--prev {
+    left: 5px;
+  }
+
+  .splide .splide__arrow.splide__arrow--next {
+    right: 5px;
   }
 
   .splide__pagination .splide__pagination__page {
